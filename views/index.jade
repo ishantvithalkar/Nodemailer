@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1= title
+  form(method='post', action='/mail', enctype="multipart/form-data")
+    p To 
+    input(type='email', name='receiver',autocomplete='off')
+    p Subject 
+    input(type='text', name='subject', autocomplete='off')
+    p Message 
+    textarea(name='message')   
+    p Attachments
+    input(type='file', name='file', multiple)
+    p 
+    input(type='submit', value='send')
